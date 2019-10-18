@@ -4,6 +4,7 @@ import { View, Text, StyleSheet } from "react-native";
 import { Button } from 'react-native-elements';
 
 import { CATEGORIES } from '../data/dummy-data'
+import Category from '../models/category';
 
 const CategoryMealsScreen = props => {
     const catId = props.navigation.getParam('categoryId');
@@ -25,6 +26,16 @@ const CategoryMealsScreen = props => {
             />
         </View>
     )
+}
+
+CategoryMealsScreen.navigationOptions = (navigationData) => {
+    const catId = navigationData.navigation.getParam('categoryId');
+
+    const selectedCategory = CATEGORIES.find(cat => cat.id === catId)
+
+    return {
+        headerTitle: selectedCategory.title
+    }
 }
 
 const styles = StyleSheet.create({
