@@ -15,15 +15,22 @@ import {
 
 import { Button, ThemeProvider } from 'react-native-elements';
 
+const theme = {
+  Button: {
+    raised: false
+  },
+};
+
 const App = () => {
   return (
-    <ThemeProvider>
+    <ThemeProvider theme={theme}>
       <SafeAreaView>
         <ScrollView>
           <Button title="Hey!" />
         </ScrollView>
       </SafeAreaView>
     </ThemeProvider>
+
   );
 };
 
