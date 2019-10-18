@@ -15,6 +15,8 @@ import {
 
 import { Button, ThemeProvider } from 'react-native-elements';
 
+import MealsNavigator from "./navigation/MealsNavigator";
+
 const theme = {
   Button: {
     raised: false
@@ -24,13 +26,8 @@ const theme = {
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      <SafeAreaView>
-        <ScrollView>
-          <Button title="Hey!" />
-        </ScrollView>
-      </SafeAreaView>
+      <MealsNavigator />
     </ThemeProvider>
-
   );
 };
 
