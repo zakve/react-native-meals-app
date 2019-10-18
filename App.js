@@ -12,10 +12,13 @@ import {
   StyleSheet,
   ScrollView
 } from 'react-native';
+import { useScreens } from 'react-native-screens'
 
 import { Button, ThemeProvider } from 'react-native-elements';
 
 import MealsNavigator from "./navigation/MealsNavigator";
+
+useScreens();
 
 const theme = {
   Button: {
