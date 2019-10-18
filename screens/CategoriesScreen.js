@@ -11,7 +11,6 @@ const CategoriesScreen = props => {
                 title="Go to Meals" onPress={() => {
                     props.navigation.navigate('CategoryMeals')
                 }}
-                type="outline"
             />
         </View>
     )
