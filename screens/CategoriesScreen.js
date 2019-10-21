@@ -9,9 +9,12 @@ import CategoryGridTile from "../components/CategoryGridTile";
 const CategoriesScreen = props => {
     const renderGridItem = itemData => {
         return (
-            <CategoryGridTile title={itemData.item.title} onSelect={() => {
-                props.navigation.navigate('CategoryMeals', { categoryId: itemData.item.id })
-            }} />
+            <CategoryGridTile
+                title={itemData.item.title}
+                bgColor={itemData.item.color}
+                onSelect={() => {
+                    props.navigation.navigate('CategoryMeals', { categoryId: itemData.item.id })
+                }} />
         )
     }
 
