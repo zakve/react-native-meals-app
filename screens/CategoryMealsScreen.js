@@ -16,7 +16,9 @@ const CategoryMealsScreen = props => {
                 displayedMeals.map((l, i) => (
                     <ListItem
                         key={i}
+                        leftAvatar={{ source: { uri: l.imageUrl } }}
                         title={l.title}
+                        subtitle={`${l.affordability} | ${l.complexity} | ${l.duration}m`}
                         bottomDivider
                         chevron
                     />
