@@ -19,6 +19,9 @@ const CategoryMealsScreen = props => {
                         leftAvatar={{ source: { uri: l.imageUrl } }}
                         title={l.title}
                         subtitle={`${l.affordability} | ${l.complexity} | ${l.duration}m`}
+                        onPress={() => {
+                            props.navigation.navigate('MealDetail', { mealId: l.id })
+                        }}
                         bottomDivider
                         chevron
                     />

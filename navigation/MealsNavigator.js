@@ -18,7 +18,7 @@ const MealsNavigator = createStackNavigator({
     MealDetail: MealDetailScreen
 }, {
     defaultNavigationOptions: {
-        headerTitle: 'A screen'
+        // headerTitle: 'A screen'
     }
 });
 
