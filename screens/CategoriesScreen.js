@@ -1,8 +1,10 @@
 import React from 'react';
 import { View, Text, FlatList, StyleSheet, TouchableOpacity } from "react-native";
 import { Button } from 'react-native-elements';
+import { HeaderButtons, Item } from 'react-navigation-header-buttons'
 
 import { CATEGORIES } from '../data/dummy-data'
+import HeaderButton from "../components/HeaderButton";
 
 import CategoryGridTile from "../components/CategoryGridTile";
 
@@ -25,6 +27,17 @@ const CategoriesScreen = props => {
             renderItem={renderGridItem}
             numColumns={2} />
     )
+}
+
+CategoriesScreen.navigationOptions = navigationData => {
+    return {
+        headerLeft: <HeaderButtons HeaderButtonComponent={HeaderButton}>
+            <Item title='Menu' iconName='menu' onPress={() => {
+                navigationData.navigation.dispatch(DrawerActions.toggleDrawer())
+            }} />
+        </HeaderButtons>
+    }
+
 }
 
 const styles = StyleSheet.create({
