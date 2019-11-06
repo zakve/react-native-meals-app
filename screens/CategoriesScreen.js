@@ -29,11 +29,11 @@ const CategoriesScreen = props => {
     )
 }
 
-CategoriesScreen.navigationOptions = navigationData => {
+CategoriesScreen.navigationOptions = (navData) => {
     return {
         headerLeft: <HeaderButtons HeaderButtonComponent={HeaderButton}>
             <Item title='Menu' iconName='menu' onPress={() => {
-                navigationData.navigation.dispatch(DrawerActions.toggleDrawer())
+                navData.navigation.toggleDrawer()
             }} />
         </HeaderButtons>
     }
