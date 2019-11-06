@@ -32,7 +32,7 @@ const CategoriesScreen = props => {
 CategoriesScreen.navigationOptions = (navData) => {
     return {
         headerLeft: <HeaderButtons HeaderButtonComponent={HeaderButton}>
-            <Item title='Menu' iconName='menu' onPress={() => {
+            <Item title='Menu' iconName='menu' style={styles.headerBtn} onPress={() => {
                 navData.navigation.toggleDrawer()
             }} />
         </HeaderButtons>
@@ -45,6 +45,9 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center'
+    },
+    headerBtn: {
+        paddingHorizontal: 15
     }
 })
 
