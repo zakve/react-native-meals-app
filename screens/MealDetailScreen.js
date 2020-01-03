@@ -19,7 +19,6 @@ const MealDetailScreen = props => {
                     style={styles.image}
                     PlaceholderContent={<ActivityIndicator />}
                 />
-                <Text style={styles.title} h3>{selectedMeal.title}</Text>
                 <View style={styles.tags}>
                     <Text>{selectedMeal.affordability}</Text>
                     <Text>{selectedMeal.complexity}</Text>
