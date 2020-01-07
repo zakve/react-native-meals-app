@@ -4,6 +4,7 @@ import { View, Text, StyleSheet } from "react-native";
 import { ListItem } from 'react-native-elements';
 import { HeaderButtons, Item } from 'react-navigation-header-buttons'
 import HeaderButton from "../components/HeaderButton";
+import Snackbar from 'react-native-snackbar';
 
 import { setFilters } from "../store/actions/meals";
 
@@ -26,6 +27,7 @@ const FiltersScreen = props => {
         }
 
         dispatch(setFilters(appliedFilters));
+        Snackbar.show({ title: 'Filter saved' });
     }, [isGlutenFree, isLactoseFree, isVegetarian, isVegan, dispatch])
 
     useEffect(() => {

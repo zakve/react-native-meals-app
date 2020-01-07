@@ -6,6 +6,7 @@ import { Button, Text, Image, ListItem } from 'react-native-elements';
 import { HeaderButtons, Item } from "react-navigation-header-buttons";
 import HeaderButton from "../components/HeaderButton";
 import { toggleFavorite } from "../store/actions/meals";
+import Snackbar from 'react-native-snackbar';
 
 const MealDetailScreen = props => {
     const mealId = props.navigation.getParam('mealId');
@@ -18,7 +19,8 @@ const MealDetailScreen = props => {
 
     // useCallback to avoid infinite loop
     const toggleFavoriteHandler = useCallback(() => {
-        dispatch(toggleFavorite(mealId))
+        dispatch(toggleFavorite(mealId));
+        Snackbar.show({ title: '(un)marked as favorite' });
     }, [dispatch, mealId]);
 
     useEffect(() => {
