@@ -13,7 +13,7 @@ const MealList = props => {
                         title={l.title}
                         subtitle={`${l.affordability} | ${l.complexity} | ${l.duration}m`}
                         onPress={() => {
-                            props.navigation.navigate('MealDetail', { mealId: l.id })
+                            props.navigation.navigate('MealDetail', { mealId: l.id, mealTitle: l.title })
                         }}
                         bottomDivider
                         chevron

@@ -13,12 +13,19 @@ import {
   ScrollView
 } from 'react-native';
 import { useScreens } from 'react-native-screens'
-
-import { Button, ThemeProvider } from 'react-native-elements';
+import { ThemeProvider } from 'react-native-elements';
+import { createStore, combineReducers } from "redux";
+import { Provider } from "react-redux";
 
 import MealsNavigator from "./navigation/MealsNavigator";
+import mealsReducer from "./store/reducers/meals";
 
 useScreens();
+
+const rootReducer = combineReducers({
+  meals: mealsReducer
+});
+const store = createStore(rootReducer);
 
 const theme = {
   Button: {
@@ -29,7 +36,9 @@ const theme = {
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      <MealsNavigator theme="light" />
+      <Provider store={store}>
+        <MealsNavigator theme="light" />
+      </Provider>
     </ThemeProvider>
   );
 };
