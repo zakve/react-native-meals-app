@@ -25,7 +25,7 @@ const FavoritesScreen = props => {
 
 FavoritesScreen.navigationOptions = (navData) => {
     return {
-        headerTitle: 'Filter Meals',
+        headerTitle: 'Favorite Meals',
         headerLeft: <HeaderButtons HeaderButtonComponent={HeaderButton}>
             <Item title='Menu' iconName='menu' style={styles.headerBtn} onPress={() => {
                 navData.navigation.toggleDrawer()
