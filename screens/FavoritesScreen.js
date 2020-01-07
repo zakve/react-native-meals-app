@@ -10,6 +10,14 @@ import MealList from "../components/MealList";
 const FavoritesScreen = props => {
     const favMeals = useSelector(state => state.meals.favoriteMeals)
 
+    if (favMeals.length === 0 || !favMeals) {
+        return (
+            <View style={styles.screen}>
+                <Text>No Favorite meals found. Start adding some!</Text>
+            </View>
+        )
+    }
+
     return (
         <MealList displayedMeals={favMeals} navigation={props.navigation} />
     )
