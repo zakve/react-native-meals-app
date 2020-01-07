@@ -13,7 +13,9 @@ Build easy React Native CLI (not EXPO) meals app based on Udemy course from Maxi
 
 > **Features**
 > - Hooks
-> - useState, useEffect
+> - useState, useEffect, useCallback
+> - Navigation
+> - State management (Redux)
 
 ## Demo
 ![mealCategories](/assets/screenshots/mealCategories.png)
